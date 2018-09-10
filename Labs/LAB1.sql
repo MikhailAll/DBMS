@@ -6,12 +6,12 @@ SELECT *FROM departments;
 
 --3. Вывести те отделы и их наименования, которые присутствуют в таблице Employees. Строки в итоговой выборке не должны повторяться. 
 SELECT DISTINCT D.department_id, department_name 
-FROM Departments D 
-JOIN Employees E ON D.department_id = E.department_id;
+FROM departments D 
+JOIN employees E ON D.department_id = E.department_id;
 
 --4. Выбрать имена и фамилии сотрудников, дату начала работы, зарплату. 
 SELECT first_name || ' ' || last_name AS "Ф.И.О", hire_date AS "Дата", salary AS "З/п" 
-FROM Employees;
+FROM employees;
 
 --5. Проверить: есть ли в таблице Employees поля с пустыми значениями. Вывести любой из столбцов, в котором были такие значения, предварительно заменив «пустые» значения на «непустые». 
 SELECT NVL(commission_pct, 0), NVL(manager_id, 0), NVL(department_id, 0) 
